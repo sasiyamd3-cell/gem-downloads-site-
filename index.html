@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ruby Gem Downloads Tracker</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💎 Ruby Gem Downloads</h1>
+            <p>ලොව පුරා Ruby සංවර්ධකයින් විසින් බාගත කළ Gems ප්‍රමාණය</p>
+        </header>
+
+        <!-- මුළු බාගත කිරීම් -->
+        <section class="card total-card">
+            <h2>📊 සම්පූර්ණ බාගත කිරීම්</h2>
+            <div class="total-number" id="totalDownloads">0</div>
+        </section>
+
+        <!-- නිශ්චිත Gem එකක් සොයන්න -->
+        <section class="card search-card">
+            <h2>🔍 Gem එකක් සොයන්න</h2>
+            <div class="search-box">
+                <input type="text" id="gemName" placeholder="gem නම ඇතුළත් කරන්න (උදා: rails)" />
+                <input type="text" id="gemVersion" placeholder="version (උදා: 7.0.0)" />
+                <button onclick="fetchGemStats()">සොයන්න</button>
+            </div>
+            <div id="gemResult" class="gem-result">
+                <p>🔎 Gem එකක් සොයා බැලීමට ඉහත සෙවුම් කොටුව භාවිතා කරන්න.</p>
+            </div>
+        </section>
+
+        <!-- ජනප්‍රිය Gems (Demo) -->
+        <section class="card popular-card">
+            <h2>🔥 ජනප්‍රිය Gems 5ක්</h2>
+            <ul id="popularList">
+                <li>rails</li>
+                <li>nokogiri</li>
+                <li>devise</li>
+                <li>puma</li>
+                <li>sidekiq</li>
+            </ul>
+            <button onclick="fetchAllPopular()">මේවාගේ Downloads බලන්න</button>
+            <div id="popularResults"></div>
+        </section>
+
+        <footer>
+            <p>Data source: <a href="https://rubygems.org" target="_blank">RubyGems.org</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
